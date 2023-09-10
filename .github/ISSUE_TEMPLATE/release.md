@@ -1,7 +1,7 @@
 ---
 name: Release
 about: Release check list.
-title: ''
+title: Release v
 labels: release
 assignees: ''
 
