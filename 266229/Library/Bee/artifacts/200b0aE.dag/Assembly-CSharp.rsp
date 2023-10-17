@@ -374,7 +374,22 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/TextMesh Pro/Documentation/GameController.cs"
+"Assets/MyResources/Scripts/Background.cs"
+"Assets/MyResources/Scripts/Calculator.cs"
+"Assets/MyResources/Scripts/CenterMessage.cs"
+"Assets/MyResources/Scripts/FirstLogIn.cs"
+"Assets/MyResources/Scripts/GameController.cs"
+"Assets/MyResources/Scripts/GameEnd.cs"
+"Assets/MyResources/Scripts/Mouse.cs"
+"Assets/MyResources/Scripts/PlayerNameSet.cs"
+"Assets/MyResources/Scripts/QuestionCreater.cs"
+"Assets/MyResources/Scripts/Ranking.cs"
+"Assets/MyResources/Scripts/RankingRangeSelect.cs"
+"Assets/MyResources/Scripts/Result.cs"
+"Assets/MyResources/Scripts/Timer.cs"
+"Assets/MyResources/Scripts/Title.cs"
+"Assets/MyResources/Scripts/UIUpdater.cs"
+"Assets/TextMesh Pro/Documentation/TestGameController.cs"
 -langversion:9.0
 
 /deterministic

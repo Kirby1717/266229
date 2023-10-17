@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class GameController : MonoBehaviour
+public class TestGameController : MonoBehaviour
 {
 
     // ボタンを押したときの関数。プレイヤーが答えを確定する。

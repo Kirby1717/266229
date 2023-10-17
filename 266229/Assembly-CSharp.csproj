@@ -36,7 +36,22 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/TextMesh Pro/Documentation/GameController.cs" />
+     <Compile Include="Assets/MyResources/Scripts/Timer.cs" />
+     <Compile Include="Assets/MyResources/Scripts/Background.cs" />
+     <Compile Include="Assets/MyResources/Scripts/GameEnd.cs" />
+     <Compile Include="Assets/MyResources/Scripts/QuestionCreater.cs" />
+     <Compile Include="Assets/TextMesh Pro/Documentation/TestGameController.cs" />
+     <Compile Include="Assets/MyResources/Scripts/PlayerNameSet.cs" />
+     <Compile Include="Assets/MyResources/Scripts/FirstLogIn.cs" />
+     <Compile Include="Assets/MyResources/Scripts/Calculator.cs" />
+     <Compile Include="Assets/MyResources/Scripts/Ranking.cs" />
+     <Compile Include="Assets/MyResources/Scripts/Title.cs" />
+     <Compile Include="Assets/MyResources/Scripts/Mouse.cs" />
+     <Compile Include="Assets/MyResources/Scripts/GameController.cs" />
+     <Compile Include="Assets/MyResources/Scripts/UIUpdater.cs" />
+     <Compile Include="Assets/MyResources/Scripts/RankingRangeSelect.cs" />
+     <Compile Include="Assets/MyResources/Scripts/CenterMessage.cs" />
+     <Compile Include="Assets/MyResources/Scripts/Result.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
