@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638318374760000000
-    m_Hash: 1393471287
+      ticks: 638347972570000000
+    m_Hash: 964052768
   m_LockFileStatus:
     m_FilePath: /Users/kirby/GitHub/266229/266229/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638318374760000000
-    m_Hash: 1361900294
+      ticks: 638347972680000000
+    m_Hash: 3711938390
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -22,12 +22,12 @@ m_LocalPackages:
 m_ProjectPath: /Users/kirby/GitHub/266229/266229/Packages
 m_EditorVersion: 2021.3.30f1 (b4360d7cdac4)
 m_ResolvedPackages:
-- packageId: com.unity.collab-proxy@2.0.5
+- packageId: com.unity.collab-proxy@2.1.0
   testable: 0
   isDirectDependency: 1
-  version: 2.0.5
+  version: 2.1.0
   source: 1
-  resolvedPath: /Users/kirby/GitHub/266229/266229/Library/PackageCache/com.unity.collab-proxy@2.0.5
+  resolvedPath: /Users/kirby/GitHub/266229/266229/Library/PackageCache/com.unity.collab-proxy@2.1.0
   assetPath: Packages/com.unity.collab-proxy
   name: com.unity.collab-proxy
   displayName: Version Control
@@ -113,12 +113,14 @@ m_ResolvedPackages:
     - 2.1.0-preview.5
     - 2.1.0-preview.6
     - 2.1.0
+    - 2.2.0
     compatible:
     - 2.0.7
     - 2.1.0-preview.3
     - 2.1.0-preview.5
     - 2.1.0-preview.6
     - 2.1.0
+    - 2.2.0
     verified: 2.0.7
   dependencies: []
   resolvedDependencies: []
@@ -147,13 +149,13 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638218079810000000
-  documentationUrl: https://docs.unity3d.com/Packages/com.unity.collab-proxy@2.0/manual/index.html
+  datePublishedTicks: 638301329890000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.collab-proxy@2.1/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.cloud.collaborate.git
-    revision: 7f68049e8cae5b51ad0d17cc01b8c6e802bf3866
+    revision: 179e96acc2f95fcb9dcc91b5fb2ee5f3e85d48aa
     path: 
   unityLifecycle:
     version: 2.0.7
@@ -329,10 +331,12 @@ m_ResolvedPackages:
     - 3.0.22
     - 3.0.24
     - 3.0.25
+    - 3.0.26
     compatible:
     - 3.0.24
     - 3.0.25
-    verified: 3.0.25
+    - 3.0.26
+    verified: 3.0.26
   dependencies:
   - name: com.unity.ext.nunit
     version: 1.0.6
@@ -406,11 +410,13 @@ m_ResolvedPackages:
     - 2.0.18
     - 2.0.20
     - 2.0.21
+    - 2.0.22
     compatible:
     - 2.0.18
     - 2.0.20
     - 2.0.21
-    verified: 2.0.21
+    - 2.0.22
+    verified: 2.0.22
   dependencies:
   - name: com.unity.test-framework
     version: 1.1.9
@@ -1029,12 +1035,14 @@ m_ResolvedPackages:
     - 1.7.3
     - 1.7.4
     - 1.7.5
+    - 1.7.6
     - 1.8.0
     - 1.8.1
     - 1.8.2
     - 1.8.3
     - 1.8.4
     - 1.8.5
+    - 1.8.6
     compatible:
     - 1.6.5
     - 1.7.0-pre.1
@@ -1045,12 +1053,14 @@ m_ResolvedPackages:
     - 1.7.3
     - 1.7.4
     - 1.7.5
+    - 1.7.6
     - 1.8.0
     - 1.8.1
     - 1.8.2
     - 1.8.3
     - 1.8.4
     - 1.8.5
+    - 1.8.6
     verified: 1.6.5
   dependencies:
   - name: com.unity.modules.director
@@ -3816,6 +3826,7 @@ m_ResolvedPackages:
     - 9.0.1
     - 9.0.2
     - 9.0.3
+    - 9.0.4
     - 10.0.0-pre.1
     - 10.0.0-pre.2
     - 10.0.0
@@ -4442,6 +4453,7 @@ m_ResolvedPackages:
     - 3.0.3
     - 3.1.0
     - 3.1.1
+    - 3.1.2
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     - 4.0.0-pre.3
