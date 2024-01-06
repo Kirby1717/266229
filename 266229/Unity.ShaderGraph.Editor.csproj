@@ -619,9 +619,9 @@
      <Compile Include="Library/PackageCache/com.unity.shadergraph@12.1.12/Editor/Drawing/Inspector/TabbedView/TabbedView.cs" />
      <Compile Include="Library/PackageCache/com.unity.shadergraph@12.1.12/Editor/Data/Nodes/Math/Round/SignNode.cs" />
      <Compile Include="Library/PackageCache/com.unity.shadergraph@12.1.12/Editor/Data/Graphs/SamplerStateMaterialSlot.cs" />
-     <Compile Include="Library/PackageCache/com.unity.shadergraph@12.1.12/Editor/Generation/Controls.cs" />
      <Compile Include="Library/PackageCache/com.unity.shadergraph@12.1.12/Editor/Serialization/SerializationExtensions.cs" />
      <Compile Include="Library/PackageCache/com.unity.shadergraph@12.1.12/Editor/Drawing/Views/MaterialNodeView.cs" />
+     <Compile Include="Library/PackageCache/com.unity.shadergraph@12.1.12/Editor/Generation/Controls.cs" />
      <Compile Include="Library/PackageCache/com.unity.shadergraph@12.1.12/Editor/Generation/Data/KeywordEntry.cs" />
      <Compile Include="Library/PackageCache/com.unity.shadergraph@12.1.12/Editor/Data/Graphs/ShaderGraphRequirements.cs" />
      <Compile Include="Library/PackageCache/com.unity.shadergraph@12.1.12/Editor/Data/Interfaces/IMayRequireMeshUV.cs" />

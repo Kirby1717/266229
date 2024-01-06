@@ -36,29 +36,30 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/MyResources/Scripts/Timer.cs" />
-     <Compile Include="Assets/MyResources/Scripts/Background.cs" />
-     <Compile Include="Assets/MyResources/Scripts/GameEnd.cs" />
-     <Compile Include="Assets/MyResources/Scripts/QuestionCreater.cs" />
+     <Compile Include="Assets/Resources/Scripts/Timer.cs" />
+     <Compile Include="Assets/Resources/Scripts/Background.cs" />
+     <Compile Include="Assets/Resources/Scripts/GameEnd.cs" />
+     <Compile Include="Assets/Resources/Scripts/QuestionMaker.cs" />
      <Compile Include="Assets/TextMesh Pro/Documentation/TestGameController.cs" />
-     <Compile Include="Assets/MyResources/Scripts/PlayerNameSet.cs" />
-     <Compile Include="Assets/MyResources/Scripts/FirstLogIn.cs" />
-     <Compile Include="Assets/MyResources/Scripts/Calculator.cs" />
-     <Compile Include="Assets/MyResources/Scripts/Ranking.cs" />
-     <Compile Include="Assets/MyResources/Scripts/Title.cs" />
-     <Compile Include="Assets/MyResources/Scripts/Mouse.cs" />
-     <Compile Include="Assets/MyResources/Scripts/GameController.cs" />
-     <Compile Include="Assets/MyResources/Scripts/UIUpdater.cs" />
-     <Compile Include="Assets/MyResources/Scripts/RankingRangeSelect.cs" />
-     <Compile Include="Assets/MyResources/Scripts/CenterMessage.cs" />
-     <Compile Include="Assets/MyResources/Scripts/Result.cs" />
+     <Compile Include="Assets/Resources/Scripts/PlayerNameSet.cs" />
+     <Compile Include="Assets/Resources/Scripts/FirstLogIn.cs" />
+     <Compile Include="Assets/Resources/Scripts/Calculator.cs" />
+     <Compile Include="Assets/Resources/Scripts/Ranking.cs" />
+     <Compile Include="Assets/Resources/Scripts/Title.cs" />
+     <Compile Include="Assets/Resources/Scripts/CenterMsg.cs" />
+     <Compile Include="Assets/Resources/Scripts/Mouse.cs" />
+     <Compile Include="Assets/Resources/Scripts/GameController.cs" />
+     <Compile Include="Assets/Resources/Scripts/UI.cs" />
+     <Compile Include="Assets/Resources/Scripts/RankingRangeSelect.cs" />
+     <Compile Include="Assets/Resources/Scripts/Result.cs" />
+     <Compile Include="Assets/Resources/Scripts/Fps.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" />
-     <None Include="Assets/MyResources/Fonts/japanese_full.txt" />
+     <None Include="Assets/Resources/Fonts/japanese_full.txt" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" />
      <None Include="Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" />
