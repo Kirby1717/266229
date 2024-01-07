@@ -7,9 +7,9 @@ public class QuestionMaker : GameController
     private Calculator Calculator;
 
     private string formula;
-    private string equation;
+    private string _equation;
     private List<string> operators = new List<string>() { "+", "-", "*", "/" };
-    private float result;
+    private float _result;
 
     void Awake()
     {
@@ -45,16 +45,16 @@ public class QuestionMaker : GameController
             formula += Random.Range(2, 10).ToString();  // 数字
 
             // 生成された式を計算
-            result = Calculator.Calculate(formula);
+            _result = Calculator.Calculate(formula);
 
             // 結果が割り切れていて、適正な範囲内なら採用
-            if (result % 1f == 0f && result > -10 && result < 100)
+            if (_result % 1f == 0f && _result > -10 && _result < 100)
             {
-                equation = formula + "=" + ((int)result).ToString();
-                Debug.Log($"Equation ({equation}) is made after {i} trail(s).");
+                _equation = formula + "=" + ((int)_result).ToString();
+                Debug.Log($"Equation ({_equation}) is made after {i} trail(s).");
                 break;
             }
         }
-        return equation;
+        return _equation;
     }
 }

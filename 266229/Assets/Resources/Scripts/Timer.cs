@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Timer : MonoBehaviour
+public class Timer : GameController
 {
     private GameObject addTimeObject;
     private TMP_Text timer;
@@ -45,6 +45,7 @@ public class Timer : MonoBehaviour
                 {
                     StopCount();
                     time = 0f;
+                    GameController.result = "FINISH";
                 }
             }
             else

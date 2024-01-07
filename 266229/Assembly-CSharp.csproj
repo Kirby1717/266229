@@ -40,6 +40,7 @@
      <Compile Include="Assets/Resources/Scripts/Background.cs" />
      <Compile Include="Assets/Resources/Scripts/GameEnd.cs" />
      <Compile Include="Assets/Resources/Scripts/QuestionMaker.cs" />
+     <Compile Include="Assets/Resources/Scripts/Fps.cs" />
      <Compile Include="Assets/TextMesh Pro/Documentation/TestGameController.cs" />
      <Compile Include="Assets/Resources/Scripts/PlayerNameSet.cs" />
      <Compile Include="Assets/Resources/Scripts/FirstLogIn.cs" />
@@ -47,12 +48,11 @@
      <Compile Include="Assets/Resources/Scripts/Ranking.cs" />
      <Compile Include="Assets/Resources/Scripts/Title.cs" />
      <Compile Include="Assets/Resources/Scripts/CenterMsg.cs" />
-     <Compile Include="Assets/Resources/Scripts/Mouse.cs" />
      <Compile Include="Assets/Resources/Scripts/GameController.cs" />
      <Compile Include="Assets/Resources/Scripts/UI.cs" />
      <Compile Include="Assets/Resources/Scripts/RankingRangeSelect.cs" />
      <Compile Include="Assets/Resources/Scripts/Result.cs" />
-     <Compile Include="Assets/Resources/Scripts/Fps.cs" />
+     <Compile Include="Assets/Resources/Scripts/Pointer.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />

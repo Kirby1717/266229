@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Title : MonoBehaviour
+public class Title : GameController
 {
     void Awake()
     {
@@ -21,8 +21,8 @@ public class Title : MonoBehaviour
 
     }
 
-    public string MainProcess()
+    public void MainProcess()
     {
-        return "TRIAL";
+        GameController.gameMode = "TRIAL";
     }
 }

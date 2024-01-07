@@ -11,26 +11,27 @@ public class GameController : MonoBehaviour
     private CenterMsg CenterMsg;
     private Fps Fps;
     private GameEnd GameEnd;
-    private Mouse Mouse;
+    private Pointer Pointer;
     private QuestionMaker QuestionMaker;
     private Timer Timer;
     private Title Title;
     private UI UI;
 
-    private string gameMode;  // "TRIAL" or "PRACTICE"
+    protected static string gameMode;  // "TRIAL" or "PRACTICE"
     protected static int qLv;
     protected static int qNo;
     private int qNoInLv;
     private int pass;
-    private int restPass;
-    private int plusTime;
+    protected static int restPass;
     protected static string equation;  // 想定解答 e.g. "2+3*5=17"
     protected static List<int> qContentList = new List<int>();  // e.g. {2, 2, 2, 6, 6}
-    private string inputFormula;
+    protected static string inputFormula;  // e.g. "2_3*_"
     private float answerTime;
-    private string result;
+    protected static string result;
     protected static int score;
     protected static int addScore;
+    protected static string pointerObjectName;
+    protected static string pointerStatus;
 
     void Awake()
     {
@@ -38,7 +39,7 @@ public class GameController : MonoBehaviour
         CenterMsg = this.gameObject.AddComponent<CenterMsg>();
         Fps = this.gameObject.AddComponent<Fps>();
         GameEnd = this.gameObject.AddComponent<GameEnd>();
-        Mouse = this.gameObject.AddComponent<Mouse>();
+        Pointer = this.gameObject.AddComponent<Pointer>();
         QuestionMaker = this.gameObject.AddComponent<QuestionMaker>();
         Timer = this.gameObject.AddComponent<Timer>();
         Title = this.gameObject.AddComponent<Title>();
@@ -62,7 +63,7 @@ public class GameController : MonoBehaviour
     private IEnumerator MainProcess()
     {
         // タイトル
-        gameMode = Title.MainProcess();
+        Title.MainProcess();
 
         // 背景表示
 
@@ -90,7 +91,7 @@ public class GameController : MonoBehaviour
         Timer.Display(true);
         qNo = 0;
         pass = 0;
-        plusTime = 0;
+        UI.Standby();
         yield return new WaitForSeconds(2f);
 
         // 問題事前作成（必要？）
@@ -139,6 +140,10 @@ public class GameController : MonoBehaviour
                 // 入力値、途中計算値初期化
                 result = "";
                 inputFormula = "";
+                for (int i = 1; i <= qLv * 2 + 1; i++)
+                {
+                    inputFormula += "_";
+                }
 
                 // 問題更新（事前に作成した問題リストから取ってくる）
                 equation = QuestionMaker.Make();  // e.g. "2+3*5=17"
@@ -165,7 +170,7 @@ public class GameController : MonoBehaviour
                 // 【解答入力待ち、正解なら続行】
                 while (result == "")
                 {
-                    result = Mouse.MainProcess();
+                    // Mouse.MainProcess();
                     yield return null;
                 }
 
