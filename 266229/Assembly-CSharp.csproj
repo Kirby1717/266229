@@ -49,10 +49,11 @@
      <Compile Include="Assets/Resources/Scripts/Title.cs" />
      <Compile Include="Assets/Resources/Scripts/CenterMsg.cs" />
      <Compile Include="Assets/Resources/Scripts/GameController.cs" />
+     <Compile Include="Assets/Resources/Scripts/Pointer.cs" />
      <Compile Include="Assets/Resources/Scripts/UI.cs" />
      <Compile Include="Assets/Resources/Scripts/RankingRangeSelect.cs" />
      <Compile Include="Assets/Resources/Scripts/Result.cs" />
-     <Compile Include="Assets/Resources/Scripts/Pointer.cs" />
+     <Compile Include="Assets/Resources/Scripts/PointerInput.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />

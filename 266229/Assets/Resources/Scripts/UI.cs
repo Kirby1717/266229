@@ -7,6 +7,7 @@ using TMPro;
 public class UI : GameController
 {
     private Canvas canvas;
+    private Canvas pointableCanvas;
     private List<GameObject> inputPanelFrameObjectList = new List<GameObject>();
     private List<GameObject> qContentObjectList = new List<GameObject>();
     private List<GameObject> inputValueObjectList = new List<GameObject>();
@@ -31,6 +32,7 @@ public class UI : GameController
     void Awake()
     {
         canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+        pointableCanvas = GameObject.Find("PointableCanvas").GetComponent<Canvas>();
         addScoreObject = GameObject.Find("AddScore");
         passButtonObject = GameObject.Find("PassButton");
         passObject = GameObject.Find("Pass");
@@ -60,17 +62,17 @@ public class UI : GameController
         // 初期化
         for (int i = 0; i <= inputPanelFrameObjectList.Count - 1; i++)
         {
-            Debug.Log($"Destroy:{i}");
+            // Debug.Log($"Destroy:{i}");
             Destroy(inputPanelFrameObjectList[i]);
-            inputPanelFrameObjectList.Clear();
         }
+        inputPanelFrameObjectList.Clear();
 
         // 生成：数字用を(Lv.+1)個、演算子用をLv.個（演算子用は薄い色で）
         posX = 415f - (float)GameController.qLv * 90f;
         for (int i = 1; i <= GameController.qLv * 2 + 1; i++)
         {
             posX += 90f;
-            _inputPanelFrameObject = Instantiate(Resources.Load("Prefabs/InputPanelFrame"), canvas.transform) as GameObject;
+            _inputPanelFrameObject = Instantiate(Resources.Load("Prefabs/InputPanelFrame"), pointableCanvas.transform) as GameObject;
             _inputPanelFrameObject.name = $"InputPanelFrame{i}";
             _inputPanelFrameObject.transform.position = new Vector3(posX, 360f, 0f);
             if (i % 2 == 0)
@@ -100,9 +102,10 @@ public class UI : GameController
         // 初期化
         for (int i = 0; i <= qContentObjectList.Count - 1; i++)
         {
+            // Debug.Log("DestroyQ: " + i.ToString());
             Destroy(qContentObjectList[i]);
-            qContentObjectList.Clear();
         }
+        qContentObjectList.Clear();
 
         // 内容リスト生成
         _MakeQContentList();
@@ -186,8 +189,8 @@ public class UI : GameController
         for (int i = 0; i <= inputValueObjectList.Count - 1; i++)
         {
             Destroy(inputValueObjectList[i]);
-            inputValueObjectList.Clear();
         }
+        inputValueObjectList.Clear();
 
         // 表示
         posX = 415f - (float)GameController.qLv * 90f;
@@ -247,6 +250,9 @@ public class UI : GameController
         // 位置調整
         posX = 730f + (float)GameController.qLv * 90f;
         _targetObject.transform.position = new Vector3(posX, 360f, 0f);
+
+        // サイズ調整
+        _targetObject.GetComponent<RectTransform>().sizeDelta = new Vector2(125, 50);
 
         // テキスト設定
         _targetObject.GetComponent<TMP_Text>().text = GameController.equation.Substring(GameController.qLv * 2 + 2);

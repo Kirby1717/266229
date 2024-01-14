@@ -11,7 +11,8 @@ public class GameController : MonoBehaviour
     private CenterMsg CenterMsg;
     private Fps Fps;
     private GameEnd GameEnd;
-    private Pointer Pointer;
+    private PointerInput PointerInput;
+    // private Pointer Pointer;
     private QuestionMaker QuestionMaker;
     private Timer Timer;
     private Title Title;
@@ -30,8 +31,8 @@ public class GameController : MonoBehaviour
     protected static string result;
     protected static int score;
     protected static int addScore;
-    protected static string pointerObjectName;
-    protected static string pointerStatus;
+    protected static string pointerObjectName = "";  // ポインタが乗っているGameObject名
+    protected static string pointerStatus = "";
 
     void Awake()
     {
@@ -39,7 +40,8 @@ public class GameController : MonoBehaviour
         CenterMsg = this.gameObject.AddComponent<CenterMsg>();
         Fps = this.gameObject.AddComponent<Fps>();
         GameEnd = this.gameObject.AddComponent<GameEnd>();
-        Pointer = this.gameObject.AddComponent<Pointer>();
+        PointerInput = this.gameObject.AddComponent<PointerInput>();
+        // Pointer = this.gameObject.AddComponent<Pointer>();
         QuestionMaker = this.gameObject.AddComponent<QuestionMaker>();
         Timer = this.gameObject.AddComponent<Timer>();
         Title = this.gameObject.AddComponent<Title>();
@@ -170,7 +172,7 @@ public class GameController : MonoBehaviour
                 // 【解答入力待ち、正解なら続行】
                 while (result == "")
                 {
-                    // Mouse.MainProcess();
+                    PointerInput.MainProcess();
                     yield return null;
                 }
 
@@ -213,6 +215,9 @@ public class GameController : MonoBehaviour
 
                     // パス時のUI表示
                     UI.Pass();
+
+                    // パス時の追加wait（正解例確認用）
+                    yield return new WaitForSeconds(1f);
                 }
                 else if (result == "FINISH")
                 {
@@ -220,6 +225,9 @@ public class GameController : MonoBehaviour
                 }
 
                 // レベル内で15問以上になってたら問題追加
+
+                // wait
+                yield return new WaitForSeconds(1f);
 
                 // 問題レベルアップ判定、アップならbreak
                 if (gameMode == "TRIAL" && qNoInLv + restPass >= 15 && qLv <= 4)

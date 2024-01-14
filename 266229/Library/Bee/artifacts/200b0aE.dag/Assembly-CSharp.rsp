@@ -383,6 +383,7 @@
 "Assets/Resources/Scripts/GameEnd.cs"
 "Assets/Resources/Scripts/PlayerNameSet.cs"
 "Assets/Resources/Scripts/Pointer.cs"
+"Assets/Resources/Scripts/PointerInput.cs"
 "Assets/Resources/Scripts/QuestionMaker.cs"
 "Assets/Resources/Scripts/Ranking.cs"
 "Assets/Resources/Scripts/RankingRangeSelect.cs"

@@ -23,12 +23,6 @@ public class Pointer : GameController, IPointerEnterHandler, IPointerExitHandler
 
     }
 
-    // 入力待ち時、GameControllerから毎フレーム呼ばれる
-    public void MainProcess()
-    {
-
-    }
-
     // ポインタがUIオブジェクトに入った時
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -43,8 +37,8 @@ public class Pointer : GameController, IPointerEnterHandler, IPointerExitHandler
     {
         Debug.Log("Exit: " + this.gameObject.name);
         // this.gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
-        GameController.pointerObjectName = this.gameObject.name;
-        GameController.pointerStatus = "EXIT";
+        GameController.pointerObjectName = "";
+        GameController.pointerStatus = "";
     }
 
     // ポインタがUIオブジェクトを押した時
@@ -63,33 +57,4 @@ public class Pointer : GameController, IPointerEnterHandler, IPointerExitHandler
         GameController.pointerStatus = "UP";
     }
 
-    // 数字入力
-    private void _Number()
-    {
-
-    }
-
-    // 演算子入力
-    private void _Operator()
-    {
-
-    }
-
-    // リセット
-    private void _Reset()
-    {
-
-    }
-
-    // フィニッシュ
-    private void _Finish()
-    {
-
-    }
-
-    // パス
-    private void _Pass()
-    {
-
-    }
 }
