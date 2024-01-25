@@ -20,7 +20,7 @@ public class Calculator : MonoBehaviour
 
     }
 
-    public float Calculate(string formula)  // e.g. "2+3*5" -> 17f
+    public float Calculate(string formula)  // e.g. "2+6+6/2-2" -> 9f
     {
         return Convert.ToSingle(dataTable.Compute(formula, ""));
     }

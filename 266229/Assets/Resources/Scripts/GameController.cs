@@ -24,9 +24,9 @@ public class GameController : MonoBehaviour
     private int qNoInLv;
     private int pass;
     protected static int restPass;
-    protected static string equation;  // 想定解答 e.g. "2+3*5=17"
+    protected static string equation;  // 想定解答 e.g. "2+6+6/2-2=9"
     protected static List<int> qContentList = new List<int>();  // e.g. {2, 2, 2, 6, 6}
-    protected static string inputFormula;  // e.g. "2_3*_"
+    protected static string inputFormula;  // e.g. "_+6_6/2__"
     private float answerTime;
     protected static string result;
     protected static int score;
@@ -148,7 +148,7 @@ public class GameController : MonoBehaviour
                 }
 
                 // 問題更新（事前に作成した問題リストから取ってくる）
-                equation = QuestionMaker.Make();  // e.g. "2+3*5=17"
+                equation = QuestionMaker.Make();  // e.g. "2+6+6/2-2=9"
 
                 // 入力候補更新
                 // inputCandidate = QuestionMaker.

@@ -38,6 +38,7 @@
   <ItemGroup>
      <Compile Include="Assets/Resources/Scripts/Timer.cs" />
      <Compile Include="Assets/Resources/Scripts/Background.cs" />
+     <Compile Include="Assets/Resources/Scripts/PointerInput.cs" />
      <Compile Include="Assets/Resources/Scripts/GameEnd.cs" />
      <Compile Include="Assets/Resources/Scripts/QuestionMaker.cs" />
      <Compile Include="Assets/Resources/Scripts/Fps.cs" />
@@ -53,7 +54,6 @@
      <Compile Include="Assets/Resources/Scripts/UI.cs" />
      <Compile Include="Assets/Resources/Scripts/RankingRangeSelect.cs" />
      <Compile Include="Assets/Resources/Scripts/Result.cs" />
-     <Compile Include="Assets/Resources/Scripts/PointerInput.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />

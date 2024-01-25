@@ -310,13 +310,13 @@ public class UI : GameController
     private IEnumerator _AddScore()
     {
         addScoreText.text = $"+{GameController.addScore.ToString()}";
-        for (int i = 1; i <= 60; i++)
+        for (int i = 1; i <= 50; i++)
         {
-            addScoreObject.transform.position += new Vector3(0f, 60f, 0f);
-            yield return new WaitForEndOfFrame();
+            addScoreObject.transform.position += new Vector3(0f, 1f, 0f);
+            yield return new WaitForSeconds(0.02f);
         }
         addScoreText.text = "";
-        addScoreObject.transform.position += new Vector3(0f, -60f, 0f);
+        addScoreObject.transform.position += new Vector3(0f, -50f, 0f);
         // TODO: 円描画
         yield break;
     }
