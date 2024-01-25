@@ -1,0 +1,34 @@
+﻿<Properties StartupConfiguration="{4D458C0E-513A-15F1-1151-FE37E2B16040}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/TextMesh Pro/Documentation/GameController.cs">
+    <Files>
+      <File FileName="Assets/TextMesh Pro/Documentation/GameController.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="266229" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="TextMesh Pro" expanded="True">
+                <Node name="Documentation" expanded="True">
+                  <Node name="GameController.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="Unity" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b65083da-72fa-4b6f-9887-5dd4f949d9a5" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
