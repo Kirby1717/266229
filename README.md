@@ -1,2 +1,4 @@
 # 266229
-シンプルな四則演算を楽しむPZL！
+
+【紹介動画】
+https://youtu.be/dtiRmTgK-vw
