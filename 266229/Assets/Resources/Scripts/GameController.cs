@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
 {
     private Calculator Calculator;
     private CenterMsg CenterMsg;
+    private Debugger Debugger;
     private Fps Fps;
     private GameEnd GameEnd;
     private PointerInput PointerInput;
@@ -38,6 +39,7 @@ public class GameController : MonoBehaviour
     {
         Calculator = this.gameObject.AddComponent<Calculator>();
         CenterMsg = this.gameObject.AddComponent<CenterMsg>();
+        Debugger = this.gameObject.AddComponent<Debugger>();
         Fps = this.gameObject.AddComponent<Fps>();
         GameEnd = this.gameObject.AddComponent<GameEnd>();
         PointerInput = this.gameObject.AddComponent<PointerInput>();
@@ -51,6 +53,8 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debugger.Da(3);
+        Debugger.Db(4);
         // 本ゲームのメイン処理実行
         StartCoroutine(MainProcess());
     }
@@ -168,6 +172,7 @@ public class GameController : MonoBehaviour
 
                 // UI更新（問題更新）
                 UI.QuestionUpdate();
+                // Debug.Log($"inputFormula: {inputFormula}");
 
                 // 【解答入力待ち、正解なら続行】
                 while (result == "")
@@ -244,7 +249,7 @@ public class GameController : MonoBehaviour
             }
 
             // 問題レベルアップ演出
-            CenterMsg.Show(msg: "LEVEL UP", showTime: 1f, color: "pink");
+            CenterMsg.Show(msg: "LEVEL UP", showTime: 1f, color: "#ff00ff");  // pink
         }
 
         // GameEnd処理

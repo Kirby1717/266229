@@ -26,7 +26,7 @@ public class Pointer : GameController, IPointerEnterHandler, IPointerExitHandler
     // ポインタがUIオブジェクトに入った時
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("Enter: " + this.gameObject.name);
+        // Debug.Log("Enter: " + this.gameObject.name);
         // this.gameObject.GetComponent<Image>().color = new Color(1f, 1f, 0f, 1f);
         GameController.pointerObjectName = this.gameObject.name;
         GameController.pointerStatus = "ENTER";
@@ -35,7 +35,7 @@ public class Pointer : GameController, IPointerEnterHandler, IPointerExitHandler
     // ポインタがUIオブジェクトから出た時
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("Exit: " + this.gameObject.name);
+        // Debug.Log("Exit: " + this.gameObject.name);
         // this.gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
         GameController.pointerObjectName = "";
         GameController.pointerStatus = "";
@@ -44,7 +44,7 @@ public class Pointer : GameController, IPointerEnterHandler, IPointerExitHandler
     // ポインタがUIオブジェクトを押した時
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("Down: " + this.gameObject.name);
+        // Debug.Log("Down: " + this.gameObject.name);
         GameController.pointerObjectName = this.gameObject.name;
         GameController.pointerStatus = "DOWN";
     }
@@ -52,7 +52,7 @@ public class Pointer : GameController, IPointerEnterHandler, IPointerExitHandler
     // ポインタがUIオブジェクトを離した時
     public void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log("Up: " + this.gameObject.name);
+        // Debug.Log("Up: " + this.gameObject.name);
         GameController.pointerObjectName = this.gameObject.name;
         GameController.pointerStatus = "UP";
     }

@@ -276,6 +276,7 @@ public class PointerInput : GameController
         {
             if (Calculator.Calculate(GameController.inputFormula) == float.Parse(GameController.equation.Substring(GameController.qLv * 2 + 2)))
             {
+                // TODO: GameController.qContentListと数字使用状況の一致確認
                 GameController.result = "ACCEPTED";
             }
         }
