@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638347972570000000
+      ticks: 638418833840000000
     m_Hash: 964052768
   m_LockFileStatus:
     m_FilePath: /Users/kirby/GitHub/266229/266229/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638347972680000000
+      ticks: 638418833840000000
     m_Hash: 3711938390
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -332,11 +332,13 @@ m_ResolvedPackages:
     - 3.0.24
     - 3.0.25
     - 3.0.26
+    - 3.0.27
     compatible:
     - 3.0.24
     - 3.0.25
     - 3.0.26
-    verified: 3.0.26
+    - 3.0.27
+    verified: 3.0.27
   dependencies:
   - name: com.unity.ext.nunit
     version: 1.0.6
@@ -706,6 +708,10 @@ m_ResolvedPackages:
     - 1.3.7
     - 1.3.8
     - 1.3.9
+    - 1.4.0
+    - 1.4.1
+    - 1.4.2
+    - 1.4.3
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -721,6 +727,10 @@ m_ResolvedPackages:
     - 1.3.7
     - 1.3.8
     - 1.3.9
+    - 1.4.0
+    - 1.4.1
+    - 1.4.2
+    - 1.4.3
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -883,23 +893,27 @@ m_ResolvedPackages:
     - 3.0.4
     - 3.0.5
     - 3.0.6
+    - 3.0.7
     - 3.2.0-pre.1
     - 3.2.0-pre.2
     - 3.2.0-pre.3
     - 3.2.0-pre.4
     - 3.2.0-pre.5
     - 3.2.0-pre.6
+    - 3.2.0-pre.7
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     compatible:
     - 3.0.6
+    - 3.0.7
     - 3.2.0-pre.1
     - 3.2.0-pre.2
     - 3.2.0-pre.3
     - 3.2.0-pre.4
     - 3.2.0-pre.5
     - 3.2.0-pre.6
-    verified: 3.0.6
+    - 3.2.0-pre.7
+    verified: 3.0.7
   dependencies:
   - name: com.unity.ugui
     version: 1.0.0
@@ -3139,9 +3153,11 @@ m_ResolvedPackages:
     - 1.2.5
     - 1.2.6
     - 1.3.1
+    - 1.3.2
     compatible:
     - 1.2.6
     - 1.3.1
+    - 1.3.2
     verified: 1.2.6
   dependencies: []
   resolvedDependencies: []
@@ -3313,6 +3329,9 @@ m_ResolvedPackages:
     - 1.8.7
     - 1.8.8
     - 1.8.9
+    - 1.8.10
+    - 1.8.11
+    - 1.8.12
     compatible:
     - 1.6.6
     - 1.7.0-pre.1
@@ -3331,6 +3350,9 @@ m_ResolvedPackages:
     - 1.8.7
     - 1.8.8
     - 1.8.9
+    - 1.8.10
+    - 1.8.11
+    - 1.8.12
     verified: 1.6.6
   dependencies:
   - name: com.unity.mathematics
@@ -3812,6 +3834,8 @@ m_ResolvedPackages:
     - 7.0.10
     - 7.0.11
     - 7.0.12
+    - 7.0.13
+    - 7.1.0
     - 8.0.0-pre.3
     - 8.0.0-pre.4
     - 8.0.0
@@ -3827,16 +3851,20 @@ m_ResolvedPackages:
     - 9.0.2
     - 9.0.3
     - 9.0.4
+    - 9.1.0
     - 10.0.0-pre.1
     - 10.0.0-pre.2
     - 10.0.0
     - 10.0.1
     - 10.0.2
     - 10.0.3
+    - 10.1.0
     compatible:
     - 7.0.11
     - 7.0.12
-    verified: 7.0.12
+    - 7.0.13
+    - 7.1.0
+    verified: 7.0.13
   dependencies:
   - name: com.unity.2d.common
     version: 6.0.6
@@ -4047,6 +4075,8 @@ m_ResolvedPackages:
     - 6.0.5
     - 6.0.6
     - 6.0.7
+    - 6.0.8
+    - 6.0.9
     - 7.0.0-pre.3
     - 7.0.0-pre.4
     - 7.0.0
@@ -4058,13 +4088,17 @@ m_ResolvedPackages:
     - 8.0.0
     - 8.0.1
     - 8.0.2
+    - 8.0.3
+    - 8.0.4
     - 9.0.0-pre.1
     - 9.0.0-pre.2
     - 9.0.0
     - 9.0.1
     compatible:
     - 6.0.7
-    verified: 6.0.7
+    - 6.0.8
+    - 6.0.9
+    verified: 6.0.9
   dependencies:
   - name: com.unity.2d.animation
     version: 7.0.9
@@ -4538,9 +4572,13 @@ m_ResolvedPackages:
     - 1.0.0-pre.4
     - 1.0.0
     - 1.0.1
+    - 1.1.0
+    - 1.1.1
     compatible:
     - 1.0.0
     - 1.0.1
+    - 1.1.0
+    - 1.1.1
     verified: 1.0.1
   dependencies:
   - name: com.unity.2d.sprite
@@ -4722,6 +4760,7 @@ m_ResolvedPackages:
     - 6.0.4
     - 6.0.5
     - 6.0.6
+    - 6.0.7
     - 7.0.0-pre.3
     - 7.0.0-pre.4
     - 7.0.0
@@ -4732,14 +4771,17 @@ m_ResolvedPackages:
     - 8.0.0-pre.2
     - 8.0.0
     - 8.0.1
+    - 8.0.2
     - 9.0.0-pre.1
     - 9.0.0-pre.2
     - 9.0.0
     - 9.0.1
     - 9.0.2
+    - 9.0.3
     compatible:
     - 6.0.6
-    verified: 6.0.6
+    - 6.0.7
+    verified: 6.0.7
   dependencies:
   - name: com.unity.2d.sprite
     version: 1.0.0

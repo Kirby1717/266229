@@ -49,6 +49,7 @@
      <Compile Include="Assets/Resources/Scripts/Ranking.cs" />
      <Compile Include="Assets/Resources/Scripts/Title.cs" />
      <Compile Include="Assets/Resources/Scripts/CenterMsg.cs" />
+     <Compile Include="Assets/Resources/Scripts/Debugger.cs" />
      <Compile Include="Assets/Resources/Scripts/GameController.cs" />
      <Compile Include="Assets/Resources/Scripts/Pointer.cs" />
      <Compile Include="Assets/Resources/Scripts/UI.cs" />

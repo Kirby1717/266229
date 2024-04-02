@@ -9,8 +9,8 @@ public class UI : GameController
     private Canvas canvas;
     private Canvas pointableCanvas;
     private List<GameObject> inputPanelFrameObjectList = new List<GameObject>();
-    private List<GameObject> qContentObjectList = new List<GameObject>();
-    private List<GameObject> inputValueObjectList = new List<GameObject>();
+    private static List<GameObject> qContentObjectList = new List<GameObject>();
+    private static List<GameObject> inputValueObjectList = new List<GameObject>();
     private GameObject _inputPanelFrameObject;
     private GameObject _qContentObject;
     private GameObject _inputValueObject;
@@ -47,13 +47,13 @@ public class UI : GameController
     // Start is called before the first frame update
     void Start()
     {
-
+        // Debugger.Db(2);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        // Debug.Log($"U_inputValueObjectList.Count : {inputValueObjectList.Count}");  // debug
     }
 
     // 入力パネルフレーム
@@ -186,6 +186,7 @@ public class UI : GameController
     private void _InputValue()
     {
         // 初期化
+        Debug.Log($"D_inputValueObjectList.Count : {inputValueObjectList.Count}");  // debug
         for (int i = 0; i <= inputValueObjectList.Count - 1; i++)
         {
             Destroy(inputValueObjectList[i]);
@@ -194,6 +195,7 @@ public class UI : GameController
 
         // 表示
         posX = 415f - (float)GameController.qLv * 90f;
+        Debug.Log($"inputFormula: {GameController.inputFormula}");  // debug
         for (int i = 0; i <= GameController.qLv * 2; i++)
         {
             posX += 90f;
@@ -222,6 +224,7 @@ public class UI : GameController
                 inputValueObjectList.Add(_inputValueObject);
             }
         }
+        Debug.Log($"A_inputValueObjectList.Count : {inputValueObjectList.Count}");  // debug
     }
 
     // 右三角形
@@ -286,7 +289,7 @@ public class UI : GameController
         _Target();
     }
 
-    // 入力
+    // 入力：PointerInput.csから毎f呼び出される
     public void Input()
     {
         _QContent();

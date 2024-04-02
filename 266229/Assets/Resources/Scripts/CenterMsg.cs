@@ -33,7 +33,7 @@ public class CenterMsg : MonoBehaviour
         不透明度50%
         */
 
-        centerMsg.text = $"<color=\"{color}\"><size={size}>{msg}</size></color>";
+        centerMsg.text = $"<color={color}><size={size}>{msg}</size></color>";
         if (showTime > 0f)
         {
             StartCoroutine(ShowCoroutine(showTime, animation));

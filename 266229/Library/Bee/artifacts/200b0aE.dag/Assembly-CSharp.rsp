@@ -377,6 +377,7 @@
 "Assets/Resources/Scripts/Background.cs"
 "Assets/Resources/Scripts/Calculator.cs"
 "Assets/Resources/Scripts/CenterMsg.cs"
+"Assets/Resources/Scripts/Debugger.cs"
 "Assets/Resources/Scripts/FirstLogIn.cs"
 "Assets/Resources/Scripts/Fps.cs"
 "Assets/Resources/Scripts/GameController.cs"
