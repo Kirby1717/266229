@@ -19,7 +19,7 @@ public class Fps : GameController
     // Start is called before the first frame update
     void Start()
     {
-        this.gameObject.AddComponent<Debugger>().Db(5);
+
     }
 
     // Update is called once per frame

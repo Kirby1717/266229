@@ -53,8 +53,6 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debugger.Da(3);
-        Debugger.Db(4);
         // 本ゲームのメイン処理実行
         StartCoroutine(MainProcess());
     }
