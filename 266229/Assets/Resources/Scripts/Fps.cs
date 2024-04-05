@@ -7,7 +7,7 @@ public class Fps : GameController
 {
     private TMP_Text fpsText;
 
-    private int fps;
+    private int fps = 0;
     private float processingTime = 0f;
     private float nextShow = 1f;
 
