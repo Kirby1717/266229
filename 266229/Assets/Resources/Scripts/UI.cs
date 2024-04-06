@@ -13,6 +13,7 @@ public class UI : GameController
     private static List<GameObject> qContentObjectList = new List<GameObject>();
     private static List<GameObject> underbarObjectList = new List<GameObject>();
     private static List<GameObject> inputValueObjectList = new List<GameObject>();
+    private static List<GameObject> underValueObjectList = new List<GameObject>();
     private GameObject _inputPanelFrameObject;
     private GameObject _qContentObject;
     private GameObject _underbarObject;
@@ -22,6 +23,7 @@ public class UI : GameController
     private GameObject passObject;
     private GameObject _rightTriangleObject;
     private GameObject _targetObject;
+    private GameObject _underValueObject;
     private Image passButtonImage;
     private TMP_Text qLvText;
     private TMP_Text qNoText;
@@ -35,6 +37,8 @@ public class UI : GameController
     private int _input;
     private int _limit;
     private char _inputValue;
+    private char _underValue;
+    private string _underTarget;
 
     void Awake()
     {
@@ -253,6 +257,24 @@ public class UI : GameController
         }
     }
 
+    // 演算子の表示文字化、演算子以外はそのまま
+    private char _ValueChar(char _valueChar)
+    {
+        switch (_valueChar)
+        {
+            case '+':
+                return '＋';
+            case '-':
+                return '－';
+            case '*':
+                return '×';
+            case '/':
+                return '÷';
+            default:
+                return _valueChar;
+        }
+    }
+
     // 入力数字、入力演算子
     private void _InputValue()
     {
@@ -270,21 +292,7 @@ public class UI : GameController
             {
                 _inputValueObject = Instantiate(Resources.Load("Prefabs/Text"), canvas.transform) as GameObject;
                 _inputValueObject.transform.position = new Vector3(posX, 360f, 0f);
-                switch (_inputValue)
-                {
-                    case '+':
-                        _inputValue = '＋';
-                        break;
-                    case '-':
-                        _inputValue = '－';
-                        break;
-                    case '*':
-                        _inputValue = '×';
-                        break;
-                    case '/':
-                        _inputValue = '÷';
-                        break;
-                }
+                _inputValue = _ValueChar(_inputValue);
                 _inputValueObject.GetComponent<TMP_Text>().text = _inputValue.ToString();
                 _inputValueObject.GetComponent<TMP_Text>().fontSize = 144;
                 inputValueObjectList.Add(_inputValueObject);
@@ -337,7 +345,32 @@ public class UI : GameController
     // TODO: 解答例
     private void _AnswerExample()
     {
+        // 初期化
+        _InitializeObjects(underValueObjectList);
 
+        // 表示
+        posX = 415f - (float)GameController.qLv * 90f;
+        for (int i = 0; i <= GameController.qLv * 2; i++)  // イコール以降の計算結果は表示しないことにしている
+        {
+            _underValueObject = Instantiate(Resources.Load("Prefabs/Text"), canvas.transform) as GameObject;
+            if (i <= GameController.qLv * 2 + 1)
+            {
+                posX += 90f;
+                _underValue = GameController.equation[i];
+                _underValue = _ValueChar(_underValue);
+                _underValueObject.GetComponent<TMP_Text>().text = _underValue.ToString();
+            }
+            else  // 計算結果＝ターゲット内容、現実装ではこちらは処理されない
+            {
+                posX += 135f;
+                _underTarget = GameController.equation.Substring(i);
+                _underValueObject.GetComponent<TMP_Text>().text = _underTarget;
+            }
+            _underValueObject.transform.position = new Vector3(posX, 225f, 0f);
+            _underValueObject.GetComponent<TMP_Text>().fontSize = 90;
+            _underValueObject.GetComponent<TMP_Text>().color = new Color(1f, 1f, 0f, 1f);
+            underValueObjectList.Add(_underValueObject);
+        }
     }
 
     // スタンバイ
@@ -363,6 +396,7 @@ public class UI : GameController
         _RightTriangle();
         _Target();
         _IntermediateCalc();
+        _InitializeObjects(underValueObjectList);
     }
 
     // 入力：PointerInput.csから毎f呼び出される
