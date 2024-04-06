@@ -63,16 +63,21 @@ public class UI : GameController
         // Debug.Log($"U_inputValueObjectList.Count : {inputValueObjectList.Count}");  // debug
     }
 
+    // Objects初期化：Object削除とListクリア
+    private void _InitializeObjects(List<GameObject> objectList)
+    {
+        for (int i = 0; i <= objectList.Count - 1; i++)
+        {
+            Destroy(objectList[i]);
+        }
+        objectList.Clear();
+    }
+
     // 入力パネルフレーム
     private void _InputPanelFrame()
     {
         // 初期化
-        for (int i = 0; i <= inputPanelFrameObjectList.Count - 1; i++)
-        {
-            // Debug.Log($"Destroy:{i}");
-            Destroy(inputPanelFrameObjectList[i]);
-        }
-        inputPanelFrameObjectList.Clear();
+        _InitializeObjects(inputPanelFrameObjectList);
 
         // 生成：数字用を(Lv.+1)個、演算子用をLv.個（演算子用は薄い色で）
         posX = 415f - (float)GameController.qLv * 90f;
@@ -107,17 +112,8 @@ public class UI : GameController
     private void _QContent()
     {
         // 初期化
-        for (int i = 0; i <= qContentObjectList.Count - 1; i++)
-        {
-            // Debug.Log("DestroyQ: " + i.ToString());
-            Destroy(qContentObjectList[i]);
-        }
-        for (int i = 0; i <= underbarObjectList.Count - 1; i++)
-        {
-            Destroy(underbarObjectList[i]);
-        }
-        qContentObjectList.Clear();
-        underbarObjectList.Clear();
+        _InitializeObjects(qContentObjectList);
+        _InitializeObjects(underbarObjectList);
 
         // 問題内容リスト、入力数字リスト作成
         _MakeQContentList();
@@ -261,16 +257,11 @@ public class UI : GameController
     private void _InputValue()
     {
         // 初期化
-        Debug.Log($"D_inputValueObjectList.Count : {inputValueObjectList.Count}");  // debug
-        for (int i = 0; i <= inputValueObjectList.Count - 1; i++)
-        {
-            Destroy(inputValueObjectList[i]);
-        }
-        inputValueObjectList.Clear();
+        _InitializeObjects(inputValueObjectList);
 
         // 表示
         posX = 415f - (float)GameController.qLv * 90f;
-        Debug.Log($"inputFormula: {GameController.inputFormula}");  // debug
+        // Debug.Log($"inputFormula: {GameController.inputFormula}");  // debug
         for (int i = 0; i <= GameController.qLv * 2; i++)
         {
             posX += 90f;
@@ -299,7 +290,7 @@ public class UI : GameController
                 inputValueObjectList.Add(_inputValueObject);
             }
         }
-        Debug.Log($"A_inputValueObjectList.Count : {inputValueObjectList.Count}");  // debug
+        // Debug.Log($"A_inputValueObjectList.Count : {inputValueObjectList.Count}");  // debug
     }
 
     // 右三角形
