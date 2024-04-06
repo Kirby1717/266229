@@ -28,6 +28,7 @@ public class GameController : MonoBehaviour
     protected static string equation;  // 想定解答 e.g. "2+6+6/2-2=9"
     protected static List<int> qContentList = new List<int>();  // e.g. {2, 2, 2, 6, 6}
     protected static string inputFormula;  // e.g. "_+6_6/2__"
+    protected static List<int> inputNumberList = new List<int>();  // e.g. {0, 6, 6, 2, 0}
     private float answerTime;
     protected static string result;
     protected static int score;
@@ -85,7 +86,7 @@ public class GameController : MonoBehaviour
         CenterMsg.Show(msg: "LOADING...");
         if (gameMode == "TRIAL")
         {
-            qLv = 0;
+            qLv = 1;  // DEBUG
             Timer.Set(60f);
         }
         else

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -10,9 +11,11 @@ public class UI : GameController
     private Canvas pointableCanvas;
     private List<GameObject> inputPanelFrameObjectList = new List<GameObject>();
     private static List<GameObject> qContentObjectList = new List<GameObject>();
+    private static List<GameObject> underbarObjectList = new List<GameObject>();
     private static List<GameObject> inputValueObjectList = new List<GameObject>();
     private GameObject _inputPanelFrameObject;
     private GameObject _qContentObject;
+    private GameObject _underbarObject;
     private GameObject _inputValueObject;
     private GameObject addScoreObject;
     private GameObject passButtonObject;
@@ -27,6 +30,10 @@ public class UI : GameController
     private TMP_Text passText;
 
     private float posX;
+    private int _number;
+    private int _count;
+    private int _input;
+    private int _limit;
     private char _inputValue;
 
     void Awake()
@@ -105,24 +112,69 @@ public class UI : GameController
             // Debug.Log("DestroyQ: " + i.ToString());
             Destroy(qContentObjectList[i]);
         }
+        for (int i = 0; i <= underbarObjectList.Count - 1; i++)
+        {
+            Destroy(underbarObjectList[i]);
+        }
         qContentObjectList.Clear();
+        underbarObjectList.Clear();
 
-        // 内容リスト生成
+        // 問題内容リスト、入力数字リスト作成
         _MakeQContentList();
+        _MakeInputNumberList();
 
         // 表示
         posX = 280f - (float)GameController.qLv * 60f;
+        _number = 0;
+        _count = 0;
         for (int i = 0; i <= GameController.qLv; i++)
         {
             posX += 120f;
+            if (_number == GameController.qContentList[i])
+            {
+                _count += 1;
+            }
+            else
+            {
+                _number = GameController.qContentList[i];
+                _count = 1;
+            }
+
             _qContentObject = Instantiate(Resources.Load("Prefabs/Text"), canvas.transform) as GameObject;
             _qContentObject.transform.position = new Vector3(posX, 540f, 0f);
-            _qContentObject.GetComponent<TMP_Text>().text = GameController.qContentList[i].ToString();
+            _qContentObject.GetComponent<TMP_Text>().text = _number.ToString();
             _qContentObject.GetComponent<TMP_Text>().fontSize = 120;
             qContentObjectList.Add(_qContentObject);
-        }
 
-        // TODO: 数字使用状況（アンダーバー）表示
+            _underbarObject = Instantiate(Resources.Load("Prefabs/Square"), canvas.transform) as GameObject;
+
+            // TODO: 数字使用状況（アンダーバー）表示
+            _input = GameController.inputNumberList.Count(x => x == _number);
+            _limit = GameController.qContentList.Count(x => x == _number);
+            if (_input <= _limit)
+            {
+                // 入力許容数以下
+                _underbarObject.transform.position = new Vector3(posX, 480f, 0f);
+                _underbarObject.GetComponent<RectTransform>().sizeDelta = new Vector2(90, 5);
+                if (_count <= _input)
+                {
+                    _underbarObject.GetComponent<Image>().color = new Color(0f, 1f, 1f, 1f);
+                }
+                else
+                {
+                    _underbarObject.GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f, 1f);
+                }
+                underbarObjectList.Add(_underbarObject);
+            }
+            else if (_count == _limit)
+            {
+                // 入力許容数超過
+                _underbarObject.transform.position = new Vector3(posX - (((float)_limit - 1f) * 60f), 480f, 0f);
+                _underbarObject.GetComponent<RectTransform>().sizeDelta = new Vector2(_limit * 120 - 30, 5);
+                _underbarObject.GetComponent<Image>().color = new Color(1f, 0.5f, 0f, 1f);
+                underbarObjectList.Add(_underbarObject);
+            }
+        }
     }
 
     // 問題内容リスト作成
@@ -138,7 +190,30 @@ public class UI : GameController
         }
 
         // 昇順ソートして完成
-        GameController.qContentList.Sort();
+        GameController.qContentList.Sort();  // e.g. {2, 2, 2, 6, 6}
+    }
+
+    // 入力数字リスト作成
+    private void _MakeInputNumberList()
+    {
+        // 初期化
+        GameController.inputNumberList.Clear();
+
+        // 入力式から数字を取り出す、_なら0
+        for (int i = 0; i <= GameController.qLv; i++)
+        {
+            if (GameController.inputFormula.Substring(i * 2, 1) == "_")
+            {
+                GameController.inputNumberList.Add(0);
+            }
+            else
+            {
+                GameController.inputNumberList.Add(int.Parse(GameController.inputFormula.Substring(i * 2, 1)));
+            }
+        }
+
+        // 昇順ソートは一旦しなくて良いだろう
+        // GameController.inputNumberList.Sort();  // e.g. {0, 6, 6, 2, 0}
     }
 
     // スコア
@@ -262,8 +337,17 @@ public class UI : GameController
         _targetObject.GetComponent<TMP_Text>().fontSize = 144;
     }
 
-    // 途中演算結果、演算結果、入力例
-    // TODO: Implement.
+    // TODO: 途中演算結果、演算結果
+    private void _IntermediateCalc()
+    {
+
+    }
+
+    // TODO: 解答例
+    private void _AnswerExample()
+    {
+
+    }
 
     // スタンバイ
     public void Standby()
@@ -287,6 +371,7 @@ public class UI : GameController
         _InputValue();
         _RightTriangle();
         _Target();
+        _IntermediateCalc();
     }
 
     // 入力：PointerInput.csから毎f呼び出される
@@ -294,6 +379,7 @@ public class UI : GameController
     {
         _QContent();
         _InputValue();
+        _IntermediateCalc();
     }
 
     // スコア加算
@@ -307,6 +393,7 @@ public class UI : GameController
     public void Pass()
     {
         _PassButton();
+        _AnswerExample();
     }
 
     // スコア加算演出
