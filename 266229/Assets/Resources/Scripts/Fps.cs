@@ -7,7 +7,7 @@ public class Fps : GameController
 {
     private TMP_Text fpsText;
 
-    private int fps;
+    private int fps = 0;
     private float processingTime = 0f;
     private float nextShow = 1f;
 
@@ -19,7 +19,7 @@ public class Fps : GameController
     // Start is called before the first frame update
     void Start()
     {
-        this.gameObject.AddComponent<Debugger>().Db(5);
+
     }
 
     // Update is called once per frame

@@ -271,10 +271,13 @@ public class PointerInput : GameController
         // UI更新
         UI.Input();
 
+        // 途中計算実行
+        Calculator.IntermediateCalc(GameController.inputFormula);
+
         // 入力式が完成していれば（空欄がなければ）演算実行、正解ならresultに"ACCEPTED"を返す
         if (GameController.inputFormula.Contains("_") == false)
         {
-            if (Calculator.Calculate(GameController.inputFormula) == float.Parse(GameController.equation.Substring(GameController.qLv * 2 + 2)))
+            if (Calculator.Compute(GameController.inputFormula) == float.Parse(GameController.equation.Substring(GameController.qLv * 2 + 2)))
             {
                 // TODO: GameController.qContentListと数字使用状況の一致確認
                 GameController.result = "ACCEPTED";

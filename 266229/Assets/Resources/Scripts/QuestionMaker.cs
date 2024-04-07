@@ -45,7 +45,7 @@ public class QuestionMaker : GameController
             formula += Random.Range(2, 10).ToString();  // 数字
 
             // 生成された式を計算
-            _result = Calculator.Calculate(formula);
+            _result = Calculator.Compute(formula);
 
             // 結果が割り切れていて、適正な範囲内なら採用
             if (_result % 1f == 0f && _result > -10 && _result < 100)
