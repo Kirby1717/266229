@@ -148,7 +148,7 @@ public class UI : GameController
 
             _underbarObject = Instantiate(Resources.Load("Prefabs/Square"), canvas.transform) as GameObject;
 
-            // TODO: 数字使用状況（アンダーバー）表示
+            // 数字使用状況（アンダーバー）表示
             _input = GameController.inputNumberList.Count(x => x == _number);
             _limit = GameController.qContentList.Count(x => x == _number);
             if (_input <= _limit)
@@ -342,7 +342,7 @@ public class UI : GameController
 
     }
 
-    // TODO: 解答例
+    // 解答例
     private void _AnswerExample()
     {
         // 初期化
