@@ -13,7 +13,6 @@ public class GameController : MonoBehaviour
     private Fps Fps;
     private GameEnd GameEnd;
     private PointerInput PointerInput;
-    // private Pointer Pointer;
     private QuestionMaker QuestionMaker;
     private Timer Timer;
     private Title Title;
@@ -28,7 +27,7 @@ public class GameController : MonoBehaviour
     protected static string equation;  // 想定解答 e.g. "2+6+6/2-2=9"
     protected static List<int> qContentList = new List<int>();  // e.g. {2, 2, 2, 6, 6}
     protected static string inputFormula;  // e.g. "_+6_6/2__"
-    protected static List<string> intermediateList;  // e.g. {"_", "6", "?", "3", "_"}
+    internal static List<string> intermediateList = new List<string>();  // e.g. {"_", "6", "?", "3", "_"}
     protected static List<int> inputNumberList = new List<int>();  // e.g. {0, 6, 6, 2, 0}
     private float answerTime;
     protected static string result;
@@ -45,7 +44,6 @@ public class GameController : MonoBehaviour
         Fps = this.gameObject.AddComponent<Fps>();
         GameEnd = this.gameObject.AddComponent<GameEnd>();
         PointerInput = this.gameObject.AddComponent<PointerInput>();
-        // Pointer = this.gameObject.AddComponent<Pointer>();
         QuestionMaker = this.gameObject.AddComponent<QuestionMaker>();
         Timer = this.gameObject.AddComponent<Timer>();
         Title = this.gameObject.AddComponent<Title>();
@@ -87,7 +85,7 @@ public class GameController : MonoBehaviour
         CenterMsg.Show(msg: "LOADING...");
         if (gameMode == "TRIAL")
         {
-            qLv = 1;  // DEBUG
+            qLv = 0;
             Timer.Set(60f);
         }
         else

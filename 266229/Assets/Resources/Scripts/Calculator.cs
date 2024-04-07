@@ -4,11 +4,10 @@ using System.Collections.Generic;
 using System.Data;  // DataTableを使用するため
 using UnityEngine;
 
-public class Calculator : GameController
+public class Calculator : MonoBehaviour
 {
     private DataTable dataTable = new DataTable();
-    private string _term;
-    private int _numerator;
+    private Nullable<int> _numerator;
     private int _denominator;
 
     // Start is called before the first frame update
@@ -85,22 +84,91 @@ public class Calculator : GameController
             switch (formula[i])
             {
                 case '+' or '-' or '_':
-                    GameController.intermediateList.Add($"{_numerator}/{_denominator}");
-                    _numerator = 1;
-                    _denominator = 1;
+                    if (_numerator == null)
+                    {
+                        GameController.intermediateList.Add("_");
+                    }
+                    else
+                    {
+                        GameController.intermediateList.Add($"{_numerator}/{_denominator}");
+                    }
+                    if (formula[i + 1] == '_')
+                    {
+                        _numerator = null;
+                    }
+                    else
+                    {
+                        _numerator = int.Parse(formula[i + 1].ToString());
+                        _denominator = 1;
+                    }
                     break;
                 case '*':
-                    GameController.intermediateList.Add("?");
-                    _numerator *= int.Parse(formula[i + 1].ToString());
+                    if (_numerator == null)
+                    {
+                        GameController.intermediateList.Add("_");
+                        _numerator = 1;
+                        _denominator = 1;
+                    }
+                    else
+                    {
+                        if (formula[i + 1] == '_')
+                        {
+                            GameController.intermediateList.Add($"{_numerator}/{_denominator}");
+                            _numerator = 1;
+                            _denominator = 1;
+                        }
+                        else
+                        {
+                            GameController.intermediateList.Add("?");
+                        }
+                    }
+                    if (formula[i + 1] == '_')
+                    {
+                        _numerator = null;
+                    }
+                    else
+                    {
+                        _numerator *= int.Parse(formula[i + 1].ToString());
+                    }
                     break;
                 case '/':
-                    GameController.intermediateList.Add("?");
-                    _denominator *= int.Parse(formula[i + 1].ToString());
+                    if (_numerator == null)
+                    {
+                        GameController.intermediateList.Add("_");
+                    }
+                    else
+                    {
+                        if (formula[i + 1] == '_')
+                        {
+                            GameController.intermediateList.Add($"{_numerator}/{_denominator}");
+                            _numerator = 1;
+                            _denominator = 1;
+                        }
+                        else
+                        {
+                            GameController.intermediateList.Add("?");
+                        }
+                    }
+                    if (formula[i + 1] == '_')
+                    {
+                        _numerator = null;
+                    }
+                    else
+                    {
+                        _denominator *= int.Parse(formula[i + 1].ToString());
+                    }
                     break;
             }
             if (i == formula.Length - 2)
             {
-                GameController.intermediateList.Add($"{_numerator}/{_denominator}");
+                if (_numerator == null)
+                {
+                    GameController.intermediateList.Add("_");
+                }
+                else
+                {
+                    GameController.intermediateList.Add($"{_numerator}/{_denominator}");
+                }
             }
         }
 

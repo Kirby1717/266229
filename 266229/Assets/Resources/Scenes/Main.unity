@@ -1001,6 +1001,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FinishButton
       objectReference: {fileID: 0}
+    - target: {fileID: 3455334646625699895, guid: b9eb90965241e44398426de2953dbacf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9eb90965241e44398426de2953dbacf, type: 3}
 --- !u!224 &926768664 stripped
